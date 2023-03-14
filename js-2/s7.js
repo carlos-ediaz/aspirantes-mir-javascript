@@ -24,8 +24,8 @@ function max (arr) {
     }        
     else {
         for (let i=0;i<len;i++) {
-            if (arr[i]>val) {
-                val=arr[i];
+            if (arr[i]>val) { //2>3
+                val=arr[i]; //val=3
             }
         }
         return val;
@@ -68,12 +68,12 @@ console.log(maxIndex([])) // -1
 
 console.log("join: ");
 function joinf(arr) {
-    val="";
+    valor="";
     for (let i=0;i<arr.length;i++) {
-        val=val+String(arr[i])+" ";
+        valor=valor+String(arr[i])+" ";//(1 3 2 )
     }
     return val;
 }
 console.log(joinf([1, 3, 2])); // 1
-console.log(joinf(["a", "h", 8, "h", 6, 5, 4])); // 0
+console.log(joinf(["", "ha", 8, "h", 6, 5, 4])); // 0
 console.log(joinf([])); // -1
