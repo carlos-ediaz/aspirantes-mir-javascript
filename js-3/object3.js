@@ -1,12 +1,10 @@
-/*En un archivo llamado object3.js Crear una variable 
-llamada receta e inicialízalo con un objeto literal vacío.*/
+/*En un archivo llamado object3.js Crear una variable llamada receta e inicialízalo con un objeto literal vacío.*/
 const receta= {};
 //Agrégale una propiedad nombre con valor “Sandwich”.
 receta.nombre="Sandwich";
 //Agrégale una propiedad ingredientes con un arreglo vacío.
 receta.ingredientes=[];
-/*Agrega un objeto al arreglo ingredientes 
-con las siguientes propiedades: nombre: “Pan” cantidad: 2*/
+/*Agrega un objeto al arreglo ingredientes con las siguientes propiedades: nombre: “Pan” cantidad: 2*/
 receta.ingredientes.splice(0,0,{nombre:"Pan",cantidad:2});
 /*Agrega otro ingrediente al arreglo con las siguientes propiedades:
 nombre: “Queso” cantidad: 1*/

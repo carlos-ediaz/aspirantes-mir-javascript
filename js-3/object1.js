@@ -2,7 +2,7 @@ const pedro = {
     nombre :"Pedro Perez",
     edad:30,
     activo:true,
-    hobbies :["programar", "squash", "piano"]
+    hobbies :["programar", "squash", "piano"],
 }
 //imprimir edad: 
 console.log(pedro.edad);
@@ -21,10 +21,9 @@ for (let j=0;j<llaves.length;j++) {
 }
 //Agrégale al objeto una función llamada saluda que 
 //retorne la frase “Hola, me llamo ” seguido del nombre de la persona.
-function saluda(nombre) {
-    return "Hola, me llamo "+nombre;
+pedro.saluda=function salu() {
+    return "Hola, me llamo "+this.nombre;
 }
-pedro.saluda=saluda(pedro.nombre);
 //llama la función saluda
-console.log(pedro.saluda);
+console.log(pedro.saluda());
 
