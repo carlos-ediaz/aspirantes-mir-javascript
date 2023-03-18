@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mayúsculas</title>
+  </head>
+  <body>
+    <div id="ejercicio1">
+        <label for="inp0">Escribe algo:</label>
+        <input type="text" id="inp0">
+        <p id="resultado"></p>
+        <p id="resultadoMayusculas"></p>
+        <!--<input type="submit" value="Enviar">Botón de envío a "action"-->
+        <button class="btn" id="btn0">Convertir mensaje a mayusculas</button>
+        </br>
+        </br>
+        <button id="bonus">Ejecutar bonus</button>
+    </div>
+    <div id="bonusd">
+        <h1 id="hbon" >Bonus:</h1>
+        <label for="inp1">Escribe algo:</label>
+        <input type="text" id="inp1">
+        <button class="btn" id="btn1">Validar</button>
+        <p id="resultadop"></p>
+    </div>
+    
+    <script>
+        document.getElementById("bonusd").hidden=true;
+        const div0 = document.getElementById("ejercicio1");
+        const div1 = document.getElementById("bonusd");
+        const btn0 = document.getElementById("btn0");//Le asigno a btn0 el boton co id btn0
+        const btn1 = document.getElementById("btn1");
+        const inp0 = document.querySelector('#inp0');//Le asigno a inp0 el input de id texto
+        const inp1 = document.getElementById("inp1");
+        const res0 = document.querySelector('#resultado');//Le asigno a resultado el párrafo de id resultado
+        const res1 = document.getElementById("resultadoMayusculas");//Le asigno a resultado el párrafo de id resultado
+        const res2 = document.getElementById("resultadop");
+        const bono = document.getElementById("bonus");
+        inp0.addEventListener("input", function() {
+            res0.textContent = inp0.value;//Escribo el texto en el párrafo 0
+        });
+        btn0.addEventListener("click", function() {
+            res1.textContent = inp0.value.toUpperCase();//Escribo el texto en el párrafo 1
+        });
+        btn1.addEventListener("click", function() {//Validar palabra
+            let val="La palabra "+inp1.value+ (validar(inp1.value))+"es políndroma";
+            res2.textContent=val;
+        });
+        function validar(palabra) {
+            palabra=palabra.toLowerCase();
+            let comp=palabra;
+            let pos=palabra.length/2;
+            let cond=1;
+            for (let i=0;i<pos;i++) {
+                if (palabra[i]===palabra[palabra.length-(i+1)]) {
+                    console.log("true");
+                    cond=cond*1;
+                }
+                else {
+                    cond=cond*0;
+                }
+            }
+            if (cond===1) {
+                return " sí ";
+            }
+            else {
+                return " no ";
+            }            
+        }
+        bono.addEventListener("click", function() {
+            document.title="Palindromo";
+            div0.hidden=true;
+            div1.hidden=false;
+        });
+        
+    </script>
+  </body>
+</html>
