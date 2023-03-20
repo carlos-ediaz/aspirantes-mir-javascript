@@ -47,13 +47,13 @@
             res2.textContent=val;
         });
         function validar(palabra) {
-            palabra=palabra.toLowerCase();
+            palabra=palabra.toLowerCase().split(" ").join("");
             let comp=palabra;
             let pos=palabra.length/2;
             let cond=1;
             for (let i=0;i<pos;i++) {
                 if (palabra[i]===palabra[palabra.length-(i+1)]) {
-                    console.log("true");
+                    //console.log("true");
                     cond=cond*1;
                 }
                 else {
