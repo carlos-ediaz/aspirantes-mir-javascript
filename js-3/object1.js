@@ -26,4 +26,3 @@ pedro.saluda=function salu() {
 }
 //llama la función saluda
 console.log(pedro.saluda());
-
