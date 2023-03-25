@@ -5,29 +5,22 @@
 
 .is-completed{
     text-decoration: line-through;
-    text-decoration-color: rgb(197, 197, 178);
+    text-decoration-color: rgb(0, 0, 0);
     animation: animar-tachado 1s ease-in-out ;
 }
-
-
 @keyframes animar-tachado {
-  0% { 
-    text-decoration-color: white; 
-    text-decoration-thickness: 1px;
-    text-decoration-style: dotted;} /* Inicio de la animación */
-  50% {
-    text-decoration-color: rgb(175, 175, 224); 
-    text-decoration-thickness: 2px;
-    text-decoration-style: dashed;} /* Cambio de color */
+  0% {
+    text-decoration-color: rgba(255, 255, 255, 0);
+    opacity: 0.7; 
+    text-decoration-thickness: 1px;} /* Cambio de color */
   100% {
-    text-decoration-color: rgb(197, 197, 178); 
-    text-decoration-thickness: 1px;
-    text-decoration-style: solid;} /* Fin de la animación */
+    text-decoration-color: rgb(0, 0, 0); 
+    text-decoration-thickness: 1px;} /* Fin de la animación */
 }
 .space-gen{
     display: flex;
     margin-left: 20%;
-    border-radius: 20px;
+    border-radius: 5px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -67,10 +60,6 @@ h1 {
     margin-top: 2%;
     padding-bottom: 10px;
 }
-#check {
-    color: aqua;
-    
-}
 #dform {
     display: flex;
     width:90%;
@@ -93,7 +82,6 @@ h1 {
     width: 100%;
     padding: 5%;
 }
-
 .check:checked{
     opacity:1;
     transform: scale(1.2) rotate(360deg);
@@ -102,4 +90,15 @@ h1 {
 .check{
     opacity: 0.5;
     transition: background-color 1s ease-in-out, transform 1s ease-in-out;
+}
+#filter {
+    display: flex;
+    flex-direction:row-reverse;
+    width: 100%;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#btnFilter {
+    flex-direction:column;
 }
