@@ -27,6 +27,8 @@ function countPending () {
     return pending;
 }
 function checkVisibility () {
+    countDone ();
+    countPending();
     if (section==='done') {
         for (let i=0;i<lista_add.length;i++) {
             if (lista_add[i].completed===true) {
@@ -110,6 +112,7 @@ btn_delete.addEventListener('click', function (event) {
     if (lista_add.length===0) {
         div_list.style.display = 'none';//Si la lista está vacía, oculto contenido
     }
+    checkVisibility();
 });
 dform.addEventListener('submit', function(event) {//Eventos al enviar un dato
     //--------Creo y agrego los elementos de la lista---------------
@@ -183,7 +186,7 @@ dform.addEventListener('submit', function(event) {//Eventos al enviar un dato
         }
         checkVisibility();//Para que se actualice la vista si hago cambios en el estado de las tareas
     });
-
+    checkVisibility();
     event.preventDefault();
 });
 
