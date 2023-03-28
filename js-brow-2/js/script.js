@@ -100,12 +100,12 @@ filterAll.addEventListener('click', function() {
 
 btn_delete.addEventListener('click', function (event) {
     for (let i=0; i<lista_add.length;i++) {
-        console.log("i:"+i+"\n");
+        //console.log("i:"+i+"\n");
         if (lista_add[i].completed===true) {//Si completed es true, borro el div
             let divDel = document.getElementById("div"+lista_add[i].id);//Agarro el div que voy a borrar
             divDel.parentNode.removeChild(divDel);//Lo borro
             lista_add.splice(i,1);//Borro el elemento del array
-            console.log("Borré elemento pos "+i);
+            //console.log("Borré elemento pos "+i);
             i=-1;//Reinicio i para que al borrar, no queden elementos sin revisar, -1  porque i++ lo pone en 0
         }
     }
@@ -114,6 +114,7 @@ btn_delete.addEventListener('click', function (event) {
     }
     checkVisibility();
 });
+
 dform.addEventListener('submit', function(event) {//Eventos al enviar un dato
     //--------Creo y agrego los elementos de la lista---------------
     let divtareas = document.getElementById("lista");//Div contenedor de la lista de tareas
@@ -162,8 +163,11 @@ dform.addEventListener('submit', function(event) {//Eventos al enviar un dato
     }
     //-----------------------------Comportamiento del check y tachado del texto-------------------------------
     let item = document.querySelector("input.check");
+    console.log(item);
+    console.log("a");
     item.addEventListener("click", function() {
-        //console.log(item.id);
+        console.log(item);
+        console.log("b");
         let idActual=item.id;//El atributo id del checkbox es el id de la tarea
         let valorActual={};
         let pos=-1;//Para guardar la posición de la coincidencia
