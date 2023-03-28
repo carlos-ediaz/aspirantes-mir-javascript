@@ -95,9 +95,7 @@ item.forEach(function(event) {
     event.addEventListener("click", function(e) {
         elemento=e.target;
         parent=elemento.parentNode;
-        //console.log(parent);
         parent.className+=" active";
-        console.log("NODE");
         if (elemento.nextSibling.style.display==='block') {
             elemento.innerHTML=">>"
             elemento.nextSibling.style.display='none';
@@ -113,14 +111,8 @@ act.forEach(function(event) {
     //console.log(event);
     event.addEventListener("click", function(e) {
         elemento=e.target;
-        console.log(elemento.tagName)
         if (elemento.tagName==="LI") {
-
-            if (elemento.tagName==="LI") {
-                elemento.className+=" active";
-            }
-            
-            console.log(elemento);
+            elemento.className+=" active";
             for (let i=0; i<act.length;i++) {//Desactivo
                 if (!(act[i]===elemento)){
                     let f=act[i];
@@ -129,7 +121,6 @@ act.forEach(function(event) {
             }
         }
         if (elemento.tagName==="BUTTON") {
-            console.log("butt")
             for (let i=0; i<act.length;i++) {//Desactivo todos menos el padre
                 if (!(act[i]===elemento.parentNode)){
                     let f=act[i];
